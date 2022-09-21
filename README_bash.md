@@ -18,12 +18,10 @@ For virusNames, the script will randomly select one from virusesFile.
 4. If the duplicatesAllowed flag is enabled, it should also create some (random) records with duplicate citizenIDs.
 
 Specifically, 3 functions have been implemented and the main one part of the program:
-1)get_random_line()
-This function is used to select a random line from the files that are stored in the database containing the countries and viruses.
-2)monadiko_id()
-It is used to generate the unique id for each record
-3)get_eggrafi()
-Using the above two functions to get the id, country and virus we compose a record. 
+1)get_random_line(). This function is used to select a random line from the files that are stored in the database containing the countries and viruses.
+2)monadiko_id(). It is used to generate the unique id for each record
+3)get_eggrafi(). Using the above two functions to get the id, country and virus we compose a record. 
+
 For the first and last name we generate random strings with size 3 to 12. 
 For the date we take the ready-made date.
 For the age we choose a random one,as well as for the YES-NO.
