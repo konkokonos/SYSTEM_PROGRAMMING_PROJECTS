@@ -23,9 +23,9 @@ Specifically, a record is a line of ASCII text consisting of the following eleme
 - dateVaccinated: date the citizen was vaccinated. If the previous field is NO , no there is no dateVaccinated field in the record.
 When the application finishes processing the citizenRecordsFile, it will wait for input from the user from the keyboard. 
 The user will be able to issue the following commands:
-● /vaccineStatusBloom citizenID virusName
+- /vaccineStatusBloom citizenID virusName
 The application will check the bloom filter associated with virusName and print a message indicating whether the citizen with citizenID has received the vaccine against virusName. Output format: NOT VACCINATED OR MAYBE
-● /exit
+- /exit
 Exit the application. Make sure that we correctly release all the allocated memory.
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
