@@ -30,3 +30,27 @@ with the same citizenID, we should ignore the second record. Also, if we detect 
 the record should be discarded. Incorrect records are ignored when reading the file by printing the message: ERROR IN RECORD theRecord 
 where theRecord is the problematic record.
 
+To better organize the application I have created a Makefile. All tables and structures have been dynamically bound by calling malloc or realloc.
+The application has been broken into files:
+1)main.c
+Here is the main function of our application,in which we check for flags and the values of our parameters. 
+Then I call the create_array_of_structs function which is found in the array_for_structs.c file,the create_array_of_virus_structs function and finally
+the commands function. These functions are explained below.
+2)array_for_structs
+In this file an array is created from pointers to structs(records) using the create_record function found in the create_record.c file, which creates the
+structs. More precisely, by taking a line by line of our record file with the records and calling create_record we create the pointer to struct eggrafi, then with the help of the elexos function we check if our struct is valid and can be put into our array ,and finally by calling insert_to_array_of_structs we put the index into the array. I have included an extra function print_array_of_structs for checking.
+3)array_of_virus_structs
+In this file we create an array of viruses structs. At the beginning we check if we have already created the struct with virus name itself. 
+If yes,then we update the bloom_filter of the given virus. If not, we create a new virus struct and populate the empty bloom_filter. 
+To create a new struct we call the create_virus function, the gemisma_tou_bloom_filter function to fill the bloom_filter, and to check the
+elexos_for_new_virus. In gemisma_tou_bloom_filter we call the function pinakas_me_k_hash function of the hash_i.c file, 
+which creates a table with the 16 positions by calling the ready-made hash_i function.
+4)commands
+Initially a message will be displayed to the user to give one of the valid commands. 
+Otherwise, an error message will be displayed and the user will be given the option to command. 
+In case the user presses the /exit command the application will terminate.
+
+In the case of /vaccineStatusBloom after the necessary checks are done,we check if in all positions of the bloom_filter is 1. 
+If yes then the message MAYBE is displayed otherwise the message NOT VACCINATED. 
+In case the virus we put does not exist it is printed
+message to reinsert command.
