@@ -22,6 +22,14 @@ Specifically, a record is a line of ASCII text consisting of the following eleme
 - virusName: a string consisting of letters, numbers, and possibly a a string, a number, a number of characters, a number of letters,  and possibly a hyphen "-" but without spaces.
 - YES or NO: indicates whether the citizen has been vaccinated against the given virus.
 - dateVaccinated: date the citizen was vaccinated. If the previous field is NO , no there is no dateVaccinated field in the record.
+When the application finishes processing the citizenRecordsFile, it will wait for input from the user from the keyboard. 
+The user will be able to issue the following commands:
+● /vaccineStatusBloom citizenID virusName
+The application will check the bloom filter associated with virusName and print a message indicating whether the citizen with citizenID has received the vaccine against virusName. Output format: NOT VACCINATED OR MAYBE
+● /exit
+Exit the application. Make sure that we correctly release all the allocated memory.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Starting, our application should open the citizenRecordsFile to read one by one the lines and initialize and store in memory 
 the data structures it will use during when executing queries. 
@@ -47,10 +55,10 @@ elexos_for_new_virus. In gemisma_tou_bloom_filter we call the function pinakas_m
 which creates a table with the 16 positions by calling the ready-made hash_i function.
 4. commands
 Initially a message will be displayed to the user to give one of the valid commands. 
-Otherwise, an error message will be displayed and the user will be given the option to command. 
+Otherwise, an error message will be displayed and the user will be given the option to command.
+
 In case the user presses the /exit command the application will terminate.
 
 In the case of /vaccineStatusBloom after the necessary checks are done,we check if in all positions of the bloom_filter is 1. 
 If yes then the message MAYBE is displayed otherwise the message NOT VACCINATED. 
-In case the virus we put does not exist it is printed
-message to reinsert command.
+In case the virus we put does not exist it is printed message to reinsert command.
