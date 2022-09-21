@@ -1,0 +1,2 @@
+include: main.c Commands.c array_for_structs.c create_record.c hash_i.c array_of_virus_structs.c
+	gcc -o vaccineMonitor main.c Commands.c array_for_structs.c create_record.c hash_i.c  array_of_virus_structs.c -I.
