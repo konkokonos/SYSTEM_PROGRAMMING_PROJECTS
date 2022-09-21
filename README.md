@@ -6,12 +6,10 @@ of the order of 100Kbytes.
 Each line of this file describes the status vaccination status of a citizen for a particular virus. 
 For example, if the contents of the file
 are:
-
-889 John Papadopoulos Greece 52 COVID-19 YES 27-12-2020 
-889 John Papadopoulos Greece 52 H1N1 NO
-776 Maria Tortellini Italy 36 SARS-1 NO
-125 Jon Dupont USA 76 H1N1 YES 30-10-2020
-
+889 John Papadopoulos Greece 52 COVID-19 YES 27-12-2020 <br />
+889 John Papadopoulos Greece 52 H1N1 NO <br />
+776 Maria Tortellini Italy 36 SARS-1 NO <br />
+125 Jon Dupont USA 76 H1N1 YES 30-10-2020 <br />
 means we have four records describing three citizens in three different countries (Greece, Italy, USA). 
 YES indicates that the citizen has been vaccinated (on the date below) while NO indicates the opposite. 
 Specifically, a record is a line of ASCII text consisting of the following elements in that order:
